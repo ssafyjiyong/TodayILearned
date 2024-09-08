@@ -7,13 +7,17 @@ let result = 0;
 let value = 1;
 const MOD = 1234567891;
 
-for (let i = 0; i < input.length; i++) {
-    result = result + ((input[i].charCodeAt()-96) * value) % MOD;
-    value = (value * 31) % MOD;
-}
+for (let i = 0; i < n; i++) {
+    result = result + ((input[i].charCodeAt()-96) * value);
+    value = (value * 31);
 
-if (result > MOD) {
-    result %= MOD;
+    if (result > MOD) {
+        result %= MOD;
+    }
+
+    if (value > MOD) {
+        value %= MOD;
+    }
 }
 
 console.log(result);
